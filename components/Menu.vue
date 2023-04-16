@@ -1,0 +1,117 @@
+<template>
+    <div class="container topBotomBordersOut">
+        <a href="#main" >Главная</a>
+        <a href="#about">Обо мне</a>
+        <a href="#services">Услуги</a>
+        <a href="#price">Цены</a>
+        <a href="#business" >Для&nbspбизнеса</a>
+        <a href="#contacts">Контакты</a>
+    </div>
+</template>
+
+
+<!-- component script -->
+<script>
+export default {
+    /* passed props */
+    props: {
+    },
+    /*     data: () => ({
+        }), */
+    /* js code */
+    mounted() {
+    },
+    methods: {
+    }
+}
+</script>
+
+<!-- component style -->
+<style scoped lang="scss">
+/* @import 'https://fonts.googleapis.com/css?family=Raleway';
+ */
+html,
+body {
+    margin: 0px;
+}
+
+header,
+footer {
+/*     font-family: Raleway;
+ */    margin: 0 auto;
+    padding: 5em 3em;
+    text-align: center;
+    background: #555;
+}
+
+header h1 {
+    color: #AAA;
+    font-size: 40px;
+    font-weight: lighter;
+    margin-bottom: 5px;
+}
+
+header span {
+    color: #222;
+}
+
+footer span {
+    color: #AAA;
+}
+
+div.container {
+/*     font-family: Raleway;
+ */    text-align: center;
+    max-width: 886px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width:767px){
+    div.container {
+        flex-direction: column;
+}
+}
+
+div.container a {
+    color: #FFF;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+div.container a:hover {
+    color: #FFF !important;
+}
+/* Top and Bottom borders go out */
+div.topBotomBordersOut a:before,
+div.topBotomBordersOut a:after {
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+div.topBotomBordersOut a:before {
+    top: 0px;
+    transform: translateY(10px);
+}
+
+div.topBotomBordersOut a:after {
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+div.topBotomBordersOut a:hover:before,
+div.topBotomBordersOut a:hover:after {
+    opacity: 1;
+    transform: translateY(0px);
+}
+</style>
